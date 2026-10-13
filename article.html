@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Article — Terrapulse STS</title>
+  <meta name="description" content="Read an investigation from the Terrapulse STS Philippines climate crisis report.">
+
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("tp-theme");
+        if (!t) t = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        document.documentElement.setAttribute("data-theme", t);
+      } catch (e) {}
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..600&family=IBM+Plex+Mono:wght@400;500;600&family=Public+Sans:ital,wght@0,300..800;1,400..600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body data-page="article">
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-head">
+    <div class="progress" aria-hidden="true"><span class="progress__bar" id="progress-bar"></span></div>
+    <div class="head-inner wrap">
+      <a class="brand" href="index.html" aria-label="Terrapulse STS — home">
+        <span class="brand__mark" aria-hidden="true">
+          <svg viewBox="0 0 40 24" fill="none"><path d="M3 21C12 21 14 4 23 4s12 9 14 1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="3" cy="21" r="2.4" fill="currentColor"/><circle cx="23" cy="4" r="2.4" fill="currentColor"/><circle cx="37" cy="5" r="2.4" fill="currentColor"/></svg>
+        </span>
+        <span class="brand__text">
+          <span class="brand__name">Terrapulse <b>STS</b></span>
+          <span class="brand__tag">Philippines Climate Crisis Investigation</span>
+        </span>
+      </a>
+
+      <nav class="mainnav" aria-label="Primary">
+        <a class="mainnav__link" href="index.html">Home</a>
+        <a class="mainnav__link is-active" href="articles.html" aria-current="page">Articles</a>
+        <a class="mainnav__link" href="case-studies.html">Case Studies</a>
+        <a class="mainnav__link" href="climate-justice.html">Climate Justice</a>
+        <a class="mainnav__link" href="data.html">Climate Data</a>
+        <a class="mainnav__link" href="quiz.html">Quiz</a>
+        <a class="mainnav__link" href="about.html">About</a>
+      </nav>
+
+      <div class="head-tools">
+        <button class="icon-btn" id="search-toggle" type="button" aria-label="Search articles" aria-expanded="false" aria-controls="head-search">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/><path d="m20 20-3.2-3.2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+        <button class="icon-btn" id="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="4.2" stroke="currentColor" stroke-width="2"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M19.1 4.9l-1.8 1.8M6.7 17.3l-1.8 1.8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a7 7 0 1 0 10.5 10.5Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+        </button>
+        <button class="nav-toggle" id="mobile-menu-btn" type="button" aria-expanded="false" aria-controls="mobile-menu">
+          <span class="nav-toggle__bars" aria-hidden="true"></span> Menu
+        </button>
+      </div>
+    </div>
+
+    <form class="head-search" id="head-search" role="search" action="articles.html" method="get" hidden>
+      <div class="head-search__row">
+        <label class="sr-only" for="head-search-input">Search articles</label>
+        <input id="head-search-input" name="q" type="search" placeholder="Search articles, topics and keywords…" autocomplete="off">
+        <button class="btn btn--solid" type="submit">Search</button>
+      </div>
+    </form>
+
+    <nav class="mobile-menu" id="mobile-menu" aria-label="Sections" hidden>
+      <a class="mobile-menu__link" href="index.html">Home</a>
+      <a class="mobile-menu__link is-active" href="articles.html" aria-current="page">Articles</a>
+      <a class="mobile-menu__link" href="case-studies.html">Case Studies</a>
+      <a class="mobile-menu__link" href="climate-justice.html">Climate Justice</a>
+      <a class="mobile-menu__link" href="data.html">Climate Data</a>
+      <a class="mobile-menu__link" href="quiz.html">Quiz</a>
+      <a class="mobile-menu__link" href="about.html">About</a>
+    </nav>
+  </header>
+
+  <main id="main" class="wrap main">
+
+    <div class="state" id="article-error" hidden>
+      <h1 class="state__title">Article not found</h1>
+      <p class="state__text">The article you requested is unavailable. Browse the full index to find the investigation you want.</p>
+      <a class="btn btn--solid" href="articles.html">Browse all articles</a>
+    </div>
+
+    <div id="article-content" hidden>
+      <nav class="crumbs" aria-label="Breadcrumb">
+        <a href="index.html">Home</a><span aria-hidden="true">/</span>
+        <a href="articles.html">Articles</a><span aria-hidden="true">/</span>
+        <span id="article-crumb"></span>
+      </nav>
+
+      <header class="article-head">
+        <p class="eyebrow"><span class="eyebrow__node" aria-hidden="true"></span><span id="article-category"></span></p>
+        <h1 class="article-head__title" id="article-title"></h1>
+        <p class="article-head__sub" id="article-subtitle"></p>
+        <div class="article-meta">
+          <span>Issue 01 &middot; 2026</span>
+          <span id="article-time"></span>
+          <span>BSIT 2-05, Group 2</span>
+        </div>
+      </header>
+
+      <figure class="article-cover" id="article-cover"></figure>
+
+      <div class="article-layout">
+        <aside class="toc" aria-label="Table of contents">
+          <p class="toc__title">On this page</p>
+          <ol class="toc__list" id="article-toc"></ol>
+        </aside>
+
+        <div>
+          <article class="article-body" id="article-body"></article>
+
+          <footer class="article-foot">
+            <h2 class="section__title" style="font-size:1.3rem">References</h2>
+            <ol class="refs" id="article-refs"></ol>
+            <a class="backlink" href="articles.html">&larr; Back to all articles</a>
+          </footer>
+        </div>
+      </div>
+
+      <section class="section" aria-labelledby="related-title">
+        <div class="section__head">
+          <p class="eyebrow"><span class="eyebrow__node" aria-hidden="true"></span>Continue reading</p>
+          <h2 class="section__title" id="related-title">Related articles</h2>
+        </div>
+        <div class="grid grid--3" id="article-related"></div>
+      </section>
+    </div>
+
+  </main>
+
+  <footer class="site-foot">
+    <div class="wrap foot-grid">
+      <div class="foot-brand">
+        <span class="brand__name">Terrapulse <b>STS</b></span>
+        <p>An environmental research magazine examining climate change as a social and environmental crisis in the Philippines. A Science, Technology &amp; Society class output by BSIT 2-05, Group 2.</p>
+      </div>
+      <nav class="foot-col" aria-label="Explore">
+        <h2 class="foot-col__title">Explore</h2>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="articles.html">Articles</a></li>
+          <li><a href="case-studies.html">Case Studies</a></li>
+          <li><a href="climate-justice.html">Climate Justice</a></li>
+          <li><a href="data.html">Climate Data</a></li>
+          <li><a href="quiz.html">Preparedness Quiz</a></li>
+        </ul>
+      </nav>
+      <div class="foot-col">
+        <h2 class="foot-col__title">Editorial team</h2>
+        <ul>
+          <li>Serrano, Jeffrey Jr. M.</li>
+          <li>Lloren, Jerwin C.</li>
+          <li>Rivas, Eduardo Jr. A.</li>
+          <li><a href="about.html">Full credits</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h2 class="foot-col__title">Research</h2>
+        <ul>
+          <li><a href="about.html#sources">References</a></li>
+          <li><a href="about.html#method">Methodology</a></li>
+          <li><a href="data.html#timeline">Timeline</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="wrap foot-base">
+      <p>&copy; 2026 BSIT 2-05, Group 2 &middot; Terrapulse STS. Photography via Unsplash. Prepared for a Science, Technology &amp; Society inquiry.</p>
+      <button class="to-top" id="to-top" type="button">Back to top &uarr;</button>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
